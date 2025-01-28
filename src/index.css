@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
 @theme {
+  /* Custom Breakpoints */
+  --breakpoint-2xs: 375px;
+  --breakpoint-xs: 425px;
+  /* Custom Colors */
   --color-*: initial;
   --color-desaturated-red: hsl(0, 36%, 70%);
   --color-soft-red: hsl(0, 93%, 68%);
@@ -9,6 +13,8 @@
   --color-chablos: hsl(0, 100%, 98%);
   --color-your-pink: hsl(0, 80%, 86%);
   --color-geraldine: hsl(0, 74%, 74%);
+  /* Custom Fonts */
+  --font-josefin-sans: "Josefin Sans", "ui-sans-serif", "system-ui", "sans-serif";
 }
 
 @font-face {
