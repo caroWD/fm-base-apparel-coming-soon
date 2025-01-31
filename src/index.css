@@ -5,7 +5,6 @@
   --breakpoint-2xs: 375px;
   --breakpoint-xs: 425px;
   /* Custom Colors */
-  --color-*: initial;
   --color-desaturated-red: hsl(0, 36%, 70%);
   --color-soft-red: hsl(0, 93%, 68%);
   --color-dark-grayish-red: hsl(0, 6%, 24%);
@@ -23,4 +22,64 @@
   font-weight: 300 400 600;
   font-display: swap;
   src: url("./assets/fonts/JosefinSans-VariableFont_wght.woff2") format("woff2");
+}
+
+body {
+  font-family: var(--font-josefin-sans);
+  color: var(--color-desaturated-red);
+  background-color: var(--color-chablos);
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "header header header header header"
+    "hero hero hero hero hero"
+    "main main main main main";
+}
+
+.header {
+  grid-area: header;
+}
+
+.hero {
+  grid-area: hero;
+}
+
+.main {
+  grid-area: main;
+}
+
+@media screen and (width >= 64rem) {
+  body {
+    background-image: url("./assets/media/bg-pattern-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+  .main-container {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-rows: auto 1fr 1fr;
+    grid-template-areas: 
+      "header header header hero hero hero"
+      "main main main hero hero hero"
+      "main main main hero hero hero";
+    height: 100dvh;
+  }
+}
+
+@media screen and (width >= 90rem) {
+  body {
+    background-size: auto 120%;
+    background-position: left center;
+  }
+  .main-container {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-areas: 
+      "header header header hero hero"
+      "hero main main hero hero"
+      "main main main hero hero";
+  }
 }
